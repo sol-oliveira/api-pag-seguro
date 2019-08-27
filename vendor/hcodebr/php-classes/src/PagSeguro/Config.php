@@ -43,10 +43,11 @@ class Config {
 	{
 		return (Config::SANDBOX === true) ? Config::SANDBOX_SESSIONS : Config::PRODUCTION_SESSIONS;
 	}
-/*	public function getUrlJS()
+	
+	public function getUrlJS()
 	{
 		return (Config::SANDBOX === true) ? Config::SANDBOX_URL_JS : Config::PRODUCTION_URL_JS;
-	} */
+	}
 /*	public static function getUrlTransaction()
 	{
 		return (Config::SANDBOX === true) ? Config::SANDBOX_URL_TRANSACTION :
