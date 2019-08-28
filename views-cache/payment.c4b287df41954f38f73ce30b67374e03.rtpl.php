@@ -298,6 +298,13 @@
                
             });
 
+            $.each(response.paymentMethods.CREDIT_CARD.options, function(index, option){
+                $("#tab-credito .contents").append(tplCredit({
+                    name: option.name,
+                    image: option.images.MEDIUM.path
+                }));
+            })
+
             $("#loading").hide();
 
             $("#tabs-methods .nav-link:first").tab('show');
@@ -315,14 +322,43 @@
             
             showError(errors.toString());
         },
-        complete: function(response){
-            
+        complete: function(response){           
            
         }
 
        });
 
-     });
+       $("#number_field").change(function(){
+          
+          var value = $(this).val();
 
-</script>>
+          if(value.length >= 6){
+
+              PagSeguroDirectPayment.getBrand({
+
+                 cardBin: value.substring(0, 6),
+
+                 success: function(response){       
+
+                    console.log(response);  
+                     console.log('bandeira');  
+
+                 },
+                 error: function(response){
+
+
+                },
+                complete: function(response){           
+
+                }
+
+            });
+          }
+
+       });
+
+
+
+});     
+</script>
 

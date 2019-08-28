@@ -33,7 +33,7 @@
     <![endif]-->
   <script type="text/javascript">
       window.scripts = [];
-  </script>>
+  </script>
   </head>
   <body>
    
