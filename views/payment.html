@@ -479,10 +479,23 @@ scripts.push(function(){
                expirationYear: params.year, 
 
                success: function(response) {
-                // Retorna o cartão tokenizado.            
-                console.log("PARAMS", params);
-                console.log("TOKEN", response.card.token);
-                console.log("HASH", PagSeguroDirectPayment.getSenderHash());                 
+                // Retorna o cartão tokenizado. 
+
+                params.token  = response.card.token;
+                params.hash = PagSeguroDirectPayment.getSenderHash();
+
+                 $.post(
+                        "/payment/credit",
+                        $.param(params),
+                        function(r){
+                          
+                          console.log(r);
+                        }
+                    );
+           
+
+
+                                
                 },
                error: function(response) {
 
