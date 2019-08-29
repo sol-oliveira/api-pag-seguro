@@ -487,15 +487,13 @@ scripts.push(function(){
                  $.post(
                         "/payment/credit",
                         $.param(params),
+                        
                         function(r){
                           
                           console.log(r);
                         }
                     );
-           
-
-
-                                
+                                          
                 },
                error: function(response) {
 
