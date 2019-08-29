@@ -6,9 +6,10 @@ use DOMElement;
 
 class Shipping {
 	
-	const PAC = 1;
-	const SEDEX = 2;
-	const OTHER = 3;
+	const PAC = 1; //Encomenda normal 
+	const SEDEX = 2; //SEDEX
+	const OTHER = 3; //Tipo de frete não especificado
+	
 	private $address;
 	private $type;
 	private $cost;

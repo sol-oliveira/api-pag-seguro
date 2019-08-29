@@ -10,7 +10,7 @@ class Document {
 	private $value;
 	const CPF = "CPF";
 	
-/*	public function __construct(string $type, string $value)
+	public function __construct(string $type, string $value)
 	{
 		if (!$value)
 		{
@@ -18,15 +18,20 @@ class Document {
 		}
 		switch ($type)
 		{
+			
 			case Document::CPF:
+			
 			if (!Document::isValidCPF($value)) {
+				
 				throw new Exception("CPF inválido.");
 			}
 			break;
 		}
+
 		$this->type = $type;
 		$this->value = $value;
 	}
+	
 	public static function isValidCPF($number):bool
 	{
 		$number = preg_replace('/[^0-9]/', '', (string) $number);
@@ -46,16 +51,21 @@ class Document {
 	
 		return ($number{10} == ($rest < 2 ? 0 : 11 - $rest));
 	}
+	
 	public function getDOMElement():DOMElement
 	{
 	
 		$dom = new DOMDocument();
+
 		$document = $dom->createElement("document");
 		$document = $dom->appendChild($document);
+		
 		$type = $dom->createElement("type", $this->type);
 		$type = $document->appendChild($type);
+		
 		$value = $dom->createElement("value", $this->value);
 		$value = $document->appendChild($value);
+		
 		return $document;
-	} */
+	} 
 }

@@ -4,7 +4,9 @@ use Exception;
 use DOMDocument;
 use DOMElement;
 use DateTime;
+
 class Sender {
+
 	private $name;
 	private $cpf;
 	private $bornDate;

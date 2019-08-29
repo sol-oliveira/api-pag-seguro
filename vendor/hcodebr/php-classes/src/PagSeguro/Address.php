@@ -15,6 +15,7 @@ class Address {
 	private $city;
 	private $state;
 	private $country;
+	
 /*	public function __construct(
 		string $street,
 		string $number,
