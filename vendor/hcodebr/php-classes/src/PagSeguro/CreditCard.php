@@ -13,7 +13,7 @@ class CreditCard {
 	private $holder;
 	private $billingAddress;
 	
-	/*public function __construct(
+   public function __construct(
 		string $token,
 		Installment $installment,
 		Holder $holder,
@@ -47,7 +47,8 @@ class CreditCard {
 		$billingAddress = $this->billingAddress->getDomElement("billingAddress");
 		$billingAddress = $dom->importNode($billingAddress, true);
 		$billingAddress = $creditCard->appendChild($billingAddress);
+		
 		return $creditCard;
-	} */
+	} 
 	
 }
