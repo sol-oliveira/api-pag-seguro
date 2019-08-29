@@ -10,7 +10,7 @@ class Installment {
 	private $quantity;
 	private $value;
 	
-/*	public function __construct(
+	public function __construct(
 		int $quantity,
 		float $value
 	)
@@ -30,14 +30,19 @@ class Installment {
 	{
 	
 		$dom = new DOMDocument();
+		
 		$installment = $dom->createElement("installment");
 		$installment = $dom->appendChild($installment);
+		
 		$value = $dom->createElement("value", number_format($this->value, 2, ".", ""));
 		$value = $installment->appendChild($value);
+		
 		$quantity = $dom->createElement("quantity", $this->quantity);
 		$quantity = $installment->appendChild($quantity);
+		
 		$noInterestInstallmentQuantity = $dom->createElement("noInterestInstallmentQuantity", Config::MAX_INSTALLMENT_NO_INTEREST);
 		$noInterestInstallmentQuantity = $installment->appendChild($noInterestInstallmentQuantity);
+		
 		return $installment;
-	} */
+	} 
 }
