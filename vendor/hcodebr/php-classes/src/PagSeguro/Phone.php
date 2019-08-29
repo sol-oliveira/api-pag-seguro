@@ -34,7 +34,7 @@ class Phone {
 	{
 	
 		$dom = new DOMDocument();
-		
+		g
 		$phone = $dom->createElement("phone");
 		$phone = $dom->appendChild($phone);
 		

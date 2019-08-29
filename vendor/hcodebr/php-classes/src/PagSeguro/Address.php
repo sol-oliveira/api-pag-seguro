@@ -16,7 +16,7 @@ class Address {
 	private $state;
 	private $country;
 	
-/*	public function __construct(
+	public function __construct(
 		string $street,
 		string $number,
 		string $complement,
@@ -64,30 +64,40 @@ class Address {
 		$this->state = $state;
 		$this->country = $country;
 	}
+	
 	public function getDOMElement($node = "address"):DOMElement
 	{
 	
 		$dom = new DOMDocument();
+		
 		$address = $dom->createElement($node);
 		$address = $dom->appendChild($address);
+		
 		$street = $dom->createElement("street", $this->street);
 		$street = $address->appendChild($street);
+		
 		$number = $dom->createElement("number", $this->number);
 		$number = $address->appendChild($number);
 		
 		$complement = $dom->createElement("complement", $this->complement);
 		$complement = $address->appendChild($complement);
+		
 		$district = $dom->createElement("district", $this->district);
 		$district = $address->appendChild($district);
+		
 		$city = $dom->createElement("city", utf8_encode($this->city));
 		$city = $address->appendChild($city);
+		
 		$state = $dom->createElement("state", $this->state);
 		$state = $address->appendChild($state);
+		
 		$country = $dom->createElement("country", $this->country);
 		$country = $address->appendChild($country);
+		
 		$postalCode = $dom->createElement("postalCode", $this->postalCode);
 		$postalCode = $address->appendChild($postalCode);
+		
 		return $address;
-	} */
+	} 	
 	
 }
