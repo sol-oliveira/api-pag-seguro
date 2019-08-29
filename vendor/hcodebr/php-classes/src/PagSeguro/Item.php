@@ -12,7 +12,7 @@ class Item {
 	private $amount;
 	private $quantity;
 
-/*	public function __construct(
+	public function __construct(
 		int $id,
 		string $description,
 		float $amount,
@@ -40,21 +40,28 @@ class Item {
 		$this->amount = $amount;
 		$this->quantity = $quantity;
 	}
+
 	public function getDOMElement():DOMElement
 	{
 	
 		$dom = new DOMDocument();
+		
 		$item = $dom->createElement("item");
 		$item = $dom->appendChild($item);
+		
 		$amount = $dom->createElement("amount", number_format($this->amount, 2, ".", ""));
 		$amount = $item->appendChild($amount);
+		
 		$id = $dom->createElement("id", $this->id);
 		$id = $item->appendChild($id);
+		
 		$quantity = $dom->createElement("quantity", $this->quantity);
 		$quantity = $item->appendChild($quantity);
+		
 		$description = $dom->createElement("description", $this->description);
 		$description = $item->appendChild($description);
+		
 		return $item;
-	} */
+	} 
 	
 }
