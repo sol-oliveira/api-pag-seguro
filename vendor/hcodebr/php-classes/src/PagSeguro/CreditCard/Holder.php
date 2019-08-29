@@ -14,7 +14,7 @@ class Holder {
 	private $birthDate;
 	private $phone;
 	
-/*	public function __construct(
+	public function __construct(
 		string $name,
 		Document $cpf,
 		DateTime $birthDate,
@@ -34,21 +34,27 @@ class Holder {
 	{
 	
 		$dom = new DOMDocument();
+		
 		$holder = $dom->createElement("holder");
 		$holder = $dom->appendChild($holder);
+		
 		$name = $dom->createElement("name", $this->name);
 		$name = $holder->appendChild($name);
+		
 		$birthDate = $dom->createElement("birthDate", $this->birthDate->format("d/m/Y"));
 		$birthDate = $holder->appendChild($birthDate);
+		
 		$documents = $dom->createElement("documents");
 		$documents = $holder->appendChild($documents);
 		
 		$cpf = $this->cpf->getDomElement();
 		$cpf = $dom->importNode($cpf, true);
 		$cpf = $documents->appendChild($cpf);
+		
 		$phone = $this->phone->getDomElement();
 		$phone = $dom->importNode($phone, true);
 		$phone = $holder->appendChild($phone);
+		
 		return $holder;
-	} */
+	} 
 }
